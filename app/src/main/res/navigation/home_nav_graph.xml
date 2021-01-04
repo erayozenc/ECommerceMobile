@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/home_nav_graph"
+    app:startDestination="@id/homepageFragment">
+
+    <fragment
+        android:id="@+id/homepageFragment"
+        android:name="com.example.e_commerceapp.ui.home.fragments.HomepageFragment"
+        android:label="HomepageFragment" >
+        <action
+            android:id="@+id/action_homepageFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+        <action
+            android:id="@+id/action_homepageFragment_to_sortBottomSheetDialog"
+            app:destination="@id/sortBottomSheetDialog" />
+        <argument
+            android:name="category"
+            app:argType="string"
+            android:defaultValue="All" />
+        <action
+            android:id="@+id/action_homepageFragment_to_addProductFragment"
+            app:destination="@id/addProductFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoriesFragment"
+        android:name="com.example.e_commerceapp.ui.home.fragments.CategoriesFragment"
+        android:label="CategoriesFragment" >
+        <action
+            android:id="@+id/action_categoriesFragment_to_homepageFragment"
+            app:destination="@id/homepageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.e_commerceapp.ui.home.fragments.FavoritesFragment"
+        android:label="FavoritesFragment" >
+        <action
+            android:id="@+id/action_favoritesFragment_to_homepageFragment"
+            app:destination="@id/homepageFragment" />
+        <action
+            android:id="@+id/action_favoritesFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myBasketFragment"
+        android:name="com.example.e_commerceapp.ui.home.fragments.MyBasketFragment"
+        android:label="MyBasketFragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.e_commerceapp.ui.home.fragments.ProfileFragment"
+        android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.example.e_commerceapp.ui.home.fragments.ProductDetailFragment"
+        android:label="ProductDetailFragment" >
+        <action
+            android:id="@+id/action_productDetailFragment_to_homepageFragment"
+            app:destination="@id/homepageFragment" />
+        <action
+            android:id="@+id/action_productDetailFragment_self"
+            app:destination="@id/productDetailFragment" />
+        <argument
+            android:name="product"
+            app:argType="com.example.e_commerceapp.responses.products.Product" />
+    </fragment>
+    <fragment
+        android:id="@+id/sortBottomSheetDialog"
+        android:name="com.example.e_commerceapp.ui.home.dialogs.SortBottomSheetDialog"
+        android:label="SortBottomSheetDialog" >
+        <action
+            android:id="@+id/action_sortBottomSheetDialog_to_homepageFragment"
+            app:destination="@id/homepageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addProductFragment"
+        android:name="com.example.e_commerceapp.ui.admin.AddProductFragment"
+        android:label="AddProductFragment" >
+        <action
+            android:id="@+id/action_addProductFragment_to_homepageFragment"
+            app:destination="@id/homepageFragment" />
+    </fragment>
+</navigation>
